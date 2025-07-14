@@ -1,6 +1,6 @@
 export { onHydrationEnd }
  
-import { connectLogger } from '@reatom/logger'
+import { connectLogger } from '@reatom/framework'
 import type { OnHydrationEndAsync } from 'vike/types'
 import { ctx } from '../integration/ctx'
  

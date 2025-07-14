@@ -1,9 +1,15 @@
 import { useData } from "vike-react/useData";
 import { Counter } from "./Counter.js";
 import { Data } from "./+data";
+import { useEffect } from "react";
 
 export default function Page() {
-  const data = useData<Data>();
+  useEffect(() => {
+    console.log('mount')
+    return ()=> {
+      console.log('unmount')
+    }
+  }, [])
 
   return (
     <>
@@ -15,9 +21,7 @@ export default function Page() {
         </li>
       </ul>
       <div>
-        {data?.map((item: any) => (
-          <div key={item.id}>{item.title}</div>
-        ))}
+        
       </div>
     </>
   );

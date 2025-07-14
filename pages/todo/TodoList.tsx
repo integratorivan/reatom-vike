@@ -1,5 +1,6 @@
 import { reatomComponent } from "@reatom/npm-react";
 import { reatomResource, withDataAtom, withStatusesAtom } from '@reatom/framework'
+import { useEffect } from "react";
 
 const res = reatomResource((ctx) => {
   return ctx.schedule(async () => {
@@ -7,11 +8,18 @@ const res = reatomResource((ctx) => {
     const data = await res.json()
     return data
   })
-}).pipe(withStatusesAtom(), withDataAtom([]))
+}, 'Hello!').pipe(withStatusesAtom(), withDataAtom([]))
 
 export const TodoList = reatomComponent(({ ctx }) => {
   const todos = ctx.spy(res.dataAtom)
   console.log(todos)
+
+  useEffect(() => {
+    return ()=> {
+      console.log('unmount')
+    }
+  }, [])
+
   return (
     <>
       <div>

@@ -12,6 +12,6 @@ export default {
   // https://vike.dev/head-tags
   title: "My Vike App",
   description: "Demo showcasing Vike",
-  ssr: true,
   extends: vikeReact,
+  reactStrictMode: false,
 } satisfies Config;
