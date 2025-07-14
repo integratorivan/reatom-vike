@@ -10,7 +10,6 @@
     "@hono/node-server": "^1.15.0",
     "@reatom/core": "^3.10.1",
     "@reatom/framework": "^3.4.64",
-    "@reatom/logger": "^3.8.4",
     "@reatom/npm-react": "^3.10.6",
     "@trpc/client": "^11.4.3",
     "@trpc/server": "^11.4.3",

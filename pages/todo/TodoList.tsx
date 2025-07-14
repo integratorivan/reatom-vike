@@ -14,12 +14,6 @@ export const TodoList = reatomComponent(({ ctx }) => {
   const todos = ctx.spy(res.dataAtom)
   console.log(todos)
 
-  useEffect(() => {
-    return ()=> {
-      console.log('unmount')
-    }
-  }, [])
-
   return (
     <>
       <div>

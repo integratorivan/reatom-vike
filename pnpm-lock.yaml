@@ -17,9 +17,6 @@ importers:
       '@reatom/framework':
         specifier: ^3.4.64
         version: 3.4.64
-      '@reatom/logger':
-        specifier: ^3.8.4
-        version: 3.8.4
       '@reatom/npm-react':
         specifier: ^3.10.6
         version: 3.10.6(react@19.1.0)

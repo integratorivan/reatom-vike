@@ -7,6 +7,6 @@ import { ctx } from '../integration/ctx'
 const onHydrationEnd: OnHydrationEndAsync = async (
   pageContext
 ): ReturnType<OnHydrationEndAsync> => {
-  connectLogger(ctx)
+//   connectLogger(ctx)
   console.log('onHydrationEnd')
 }

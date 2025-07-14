@@ -1,16 +1,7 @@
 import { useData } from "vike-react/useData";
 import type { Data } from "./+data.js";
-import { prefetch } from "vike/client/router";
-import { reatomComponent } from "@reatom/npm-react";
-import { addItem, atomList } from "./model";
+import { TestComponent } from "./comp.js";
 
-const TestComponent = reatomComponent(({ ctx }) => {
-  const list = ctx.spy(atomList)
-  return <div>
-    {list.map((item) => <div key={item}>{item}</div>)}
-    <button onClick={() => addItem(ctx, 11)}>Add</button>
-  </div>
-})
 
 export default function Page() {
   const movies = useData<Data>();
