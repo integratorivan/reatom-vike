@@ -6,6 +6,11 @@ export default function HeadDefault() {
   return (
     <>
       <link rel="icon" href={logoUrl} />
+      <meta name="description" content="Vike + Hono + React" />
+      <meta name="description" content="Vike + Hono + React" />
+      <meta name="description" content="Vike + Hono + React" />
+      <meta name="description" content="Vike + Hono + React" />
+      <meta name="description" content="Vike + Hono + React" />
     </>
   );
 }

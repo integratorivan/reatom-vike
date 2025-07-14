@@ -2,8 +2,11 @@ import "./style.css";
 
 import logoUrl from "../assets/logo.svg";
 import { Link } from "../components/Link.js";
+import { usePageContext } from "vike-react/usePageContext";
 
 export default function LayoutDefault({ children }: { children: React.ReactNode }) {
+  const data = usePageContext()
+
   return (
     <div
       style={{
@@ -18,7 +21,9 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
         <Link href="/todo">Todo</Link>
         <Link href="/star-wars">Data Fetching</Link>
       </Sidebar>
-      <Content>{children}</Content>
+      <Content>
+        {children}
+      </Content>
     </div>
   );
 }

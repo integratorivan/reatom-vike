@@ -1,38 +1,25 @@
-import { trpc } from "../../trpc/client";
-import { useState } from "react";
+import { reatomComponent } from "@reatom/npm-react";
+import { reatomResource, withDataAtom, withStatusesAtom } from '@reatom/framework'
 
-export function TodoList({ initialTodoItems }: { initialTodoItems: { text: string }[] }) {
-  const [todoItems, setTodoItems] = useState(initialTodoItems);
-  const [newTodo, setNewTodo] = useState("");
+const res = reatomResource((ctx) => {
+  return ctx.schedule(async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos')
+    const data = await res.json()
+    return data
+  })
+}).pipe(withStatusesAtom(), withDataAtom([]))
+
+export const TodoList = reatomComponent(({ ctx }) => {
+  const todos = ctx.spy(res.dataAtom)
+  console.log(todos)
   return (
     <>
-      <ul>
-        {todoItems.map((todoItem, index) => (
-          // biome-ignore lint:
-          <li key={index}>{todoItem.text}</li>
-        ))}
-      </ul>
       <div>
-        <form
-          onSubmit={async (ev) => {
-            ev.preventDefault();
-
-            // Optimistic UI update
-            setTodoItems((prev) => [...prev, { text: newTodo }]);
-            try {
-              await trpc.onNewTodo.mutate(newTodo);
-              setNewTodo("");
-            } catch (e) {
-              console.error(e);
-              // rollback
-              setTodoItems((prev) => prev.slice(0, -1));
-            }
-          }}
-        >
-          <input type="text" onChange={(ev) => setNewTodo(ev.target.value)} value={newTodo} />
-          <button type="submit">Add to-do</button>
-        </form>
+        <h1>Privet</h1>
+        {todos?.map((todo) => (
+          <div key={todo.id}>{todo.title}</div>
+        ))}
       </div>
     </>
   );
-}
+})

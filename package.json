@@ -7,28 +7,33 @@
     "format": "biome format --write ."
   },
   "dependencies": {
-    "vike": "^0.4.235",
     "@hono/node-server": "^1.15.0",
+    "@reatom/core": "^3.10.1",
+    "@reatom/framework": "^3.4.64",
+    "@reatom/logger": "^3.8.4",
+    "@reatom/npm-react": "^3.10.6",
+    "@trpc/client": "^11.4.3",
+    "@trpc/server": "^11.4.3",
+    "@universal-middleware/core": "^0.4.8",
     "@universal-middleware/hono": "^0.4.14",
-    "hono": "^4.8.4",
     "@vitejs/plugin-react": "^4.6.0",
+    "hono": "^4.8.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "vike-react": "^0.6.4",
-    "@universal-middleware/core": "^0.4.8",
-    "@trpc/server": "^11.4.3",
-    "@trpc/client": "^11.4.3"
+    "vike": "^0.4.235",
+    "vike-react": "^0.6.4"
   },
   "devDependencies": {
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5",
     "@biomejs/biome": "1.9.4",
     "@hono/vite-dev-server": "^0.20.0",
     "@types/node": "^20.19.0",
-    "tsx": "^4.20.3",
-    "cross-env": "^7.0.3",
     "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6"
+    "@types/react-dom": "^19.1.6",
+    "cross-env": "^7.0.3",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   },
-  "type": "module"
+  "type": "module",
+  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4"
 }
